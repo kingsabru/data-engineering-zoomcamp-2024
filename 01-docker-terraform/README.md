@@ -13,11 +13,11 @@ docker run -d \
   postgres:13
 ```
 2. (Optional) Conect to Postgres database using psql:
-```
+```bash
 psql -h localhost -d ny_taxi -U admin -W -p 5433
 ```
 3. Create Conda virtual environment and install Python packages:
-```
+```bash
 conda create -n py310-de-zoomcamp-yellowtrip python=3.10
 conda activate py310-de-zoomcamp-yellowtrip
 pip install -r requirements.txt
@@ -137,4 +137,19 @@ google_bigquery_dataset.dataset: Creation complete after 2s [id=projects/de-zoom
 google_storage_bucket.data-lake-bucket: Creation complete after 3s [id=de_zoomcamp_green_tripdata]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+```
+
+## Clean Up Setup
+### 1. Stop & Remove Container
+```bash
+docker stop postgres-de-zoomcamp
+docker rm postgres-de-zoomcamp
+```
+### 2. Delete Container Volume
+```bash
+rm -rf ny_taxi_postgres_data
+```
+### 3. Delete Conda virtual environment
+```bash
+conda env remove -n py310-de-zoomcamp-yellowtrip
 ```
