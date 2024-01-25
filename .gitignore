@@ -236,3 +236,4 @@ terraform.rc
 **/*.hcl
 **/*.csv
 **/*.csv.gz
+**/.DS_Store
