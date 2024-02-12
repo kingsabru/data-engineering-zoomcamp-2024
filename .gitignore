@@ -237,3 +237,4 @@ terraform.rc
 **/*.csv
 **/*.csv.gz
 **/.DS_Store
+**/mage_data/*
